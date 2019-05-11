@@ -38,6 +38,7 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 
 	void updateGameState() {
 		objectManager.update();
+		objectManager.manageEnemies();
 	}
 
 	void updateEndState() {
@@ -121,6 +122,9 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 			rocketship.left = true;
 		} else if (e.getKeyCode() == e.VK_RIGHT) {
 			rocketship.right = true;
+		}
+		if (e.getKeyCode() == e.VK_SPACE) {
+			objectManager.addProjectile(new Projectile(rocketship.x + 20, rocketship.y, 10, 10));
 		}
 
 	}
