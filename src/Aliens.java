@@ -1,5 +1,6 @@
 import java.awt.Color;
 import java.awt.Graphics;
+import java.util.Random;
 
 public class Aliens extends GameObject {
 	Aliens(int x, int y, int width, int height) {
@@ -8,6 +9,9 @@ public class Aliens extends GameObject {
 	}
 
 	void update() {
+		super.update();
+		Random random = new Random();
+		x+=random.nextInt(21)-10;
 		y++;
 	}
 
