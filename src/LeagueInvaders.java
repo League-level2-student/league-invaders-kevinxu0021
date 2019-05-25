@@ -11,6 +11,7 @@ public class LeagueInvaders {
 	LeagueInvaders() {
 		frame = new JFrame();
 		panel = new GamePanel();
+	
 	}
 
 	public static void main(String[] args) {

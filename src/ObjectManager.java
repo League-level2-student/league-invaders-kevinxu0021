@@ -8,6 +8,8 @@ public class ObjectManager {
 	ArrayList<Aliens> aliens = new ArrayList<Aliens>();
 	long enemyTimer = 0;
 	int enemySpawnTime = 1000;
+	int score = 0;
+	
 
 	ObjectManager(Rocketship rocketship) {
 		this.rocketship = rocketship;
@@ -73,9 +75,15 @@ public class ObjectManager {
 			for (Projectile p : projectile) {
 				if (p.collisionBox.intersects(a.collisionBox)) {
 					a.isAlive = false;
+					score++;
 				}
 			}
 		}
+	}
+	
+	int getScore() {
+		return score;
+		
 	}
 
 }
